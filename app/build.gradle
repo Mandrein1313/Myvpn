@@ -1,23 +1,38 @@
 plugins {
-    id 'com.android.application'
+id 'com.android.application'
 }
 
 android {
-    namespace 'com.example.myvpn'
-    compileSdk 34
-    defaultConfig {
-        applicationId 'com.example.myvpn'
-        minSdk 23
-        targetSdk 34
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
+namespace 'com.example.myvpn'
+compileSdk 34
+
+defaultConfig {
+    applicationId 'com.example.myvpn'
+    minSdk 23
+    targetSdk 34
+
+    versionCode 1
+    versionName "1.0"
 }
+
+compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+}
+
+}
+
+configurations.configureEach {
+exclude group: "org.jetbrains.kotlin", module: "kotlin-stdlib-jdk7"
+exclude group: "org.jetbrains.kotlin", module: "kotlin-stdlib-jdk8"
+}
+
 dependencies {
-    
-    implementation 'com.google.android.material:material:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation 'androidx.core:core:1.13.1'
+
+implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.22")
+
+implementation 'androidx.core:core:1.13.1'
+implementation 'androidx.appcompat:appcompat:1.7.0'
+implementation 'com.google.android.material:material:1.9.0'
+
 }
